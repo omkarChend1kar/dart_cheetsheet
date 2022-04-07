@@ -1,4 +1,4 @@
-00:06 : Abstract Classes
+00:06 : Abstract Classes																																																																									 
 00:33 : Class that cannot be initialized with its constructor.
 00:41 : However abstract classes can have constructors, that can be called from its extended subclasses using super keyword
 01:43 : Abstract classes can have abstract methods, abstract variables or Function/methods with default implementation.
