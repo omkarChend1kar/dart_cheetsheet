@@ -1,26 +1,55 @@
-import 'dart:developer';
+import 'dart:developer' as devtools show log;
 import 'dart:io';
 
+// extension Log on Object {
+//   void log() => devtools.log(toString());
+// }
+
 void main() {
-  var cat = Cat();
+  final cat = Cat();
   cat.run();
+  final dog = Dog();
+  dog.run();
+  final kangaroo = Kangaroo();
+  kangaroo.run();
 }
 
-enum Type { Cat, Dog, Cow, Kangaroo }
-
 abstract class CanRun {
-  final Type type;
-  const CanRun({required this.type});
+  String get typeofCanRun {
+    if (this is Cat) {
+      return "$this can run";
+    } else if (this is Dog) {
+      return "$this can run";
+    } else {
+      return "$this can't run";
+    }
+  }
+
   void run() {
-    stdout.writeln("This is CanRun abstract class");
+    stdout.writeln(typeofCanRun);
   }
 }
 
 class Cat extends CanRun {
-  const Cat() : super(type: Type.Cat);
   @override
   void run() {
     super.run();
-    stdout.write("This is a Cat which inherits from class CanRun");
+    stdout.writeln("This is a $this which inherits from class CanRun");
+  }
+}
+
+class Dog extends CanRun {
+  @override
+  void run() {
+    super.run();
+    stdout.writeln("This is a $this which inherits from class CanRun");
+  }
+}
+
+class Kangaroo extends CanRun {
+  @override
+  void run() {
+    super.run();
+    stdout.writeln("This is a $this which inherits from class CanRun");
   }
 }
